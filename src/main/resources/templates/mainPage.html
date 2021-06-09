@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+
+<h1>Main Page</h1>
+
+<h2>Establish Supreme Lord</h2>
+
+<form th:method="POST" th:action="@{/lords/createSupremeLord}" th:object="${supremeLord}">
+    <input th:type="text" th:field="*{lordName}" id="name" th:placeholder="name">
+    <input type="submit" value="Establish Supreme Lord">
+
+</form>
+
+
+<p><a href="/lords/supremeLordPage">Supreme Lord Page</a></p>
+
+
+</body>
+</html>

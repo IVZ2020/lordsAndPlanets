@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ten youngest Lords</title>
+</head>
+<body>
+
+<h1>Find 10 youngest Lords</h1>
+
+<tr th:each="lord : ${tenYoungestLords}">
+
+    <td>
+        <th:block th:text="${lord.getLordName()}"></th:block>
+        <th:block th:text="${lord.getLordAge()}"></th:block>
+    </td>
+    <br>
+</tr>
+
+
+<p><a href="/mainPage">Main Page</a></p>
+<p><a href="/lords/supremeLordPage">Supreme Lord Page</a></p>
+
+
+</body>
+</html>

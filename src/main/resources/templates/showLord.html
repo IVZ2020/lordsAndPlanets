@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowLord</title>
+</head>
+<body>
+<h1>Show Lord</h1>
+
+<div>
+    <p th:text="${chosenLord.lordName}"></p>
+    <p th:text="${chosenLord.lordAge}"></p>
+    <p th:text="${chosenLord.id}"></p>
+</div>
+
+<p><a href="/mainPage">Main Page</a></p>
+<p><a href="/lords/supremeLordPage">Supreme Lord Page</a></p>
+
+</body>
+</html>

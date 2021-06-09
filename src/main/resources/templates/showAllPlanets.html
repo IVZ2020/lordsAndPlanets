@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowAllPlanets</title>
+</head>
+<body>
+
+<h1>Show All Planets</h1>
+
+<div th:each="planet : ${allPlanets}">
+    <a th:href="@{/planets/showPlanet/{planetId}(planetId=${planet.getId()})}" th:text="${planet.getName()}"></a>
+    <div th:each="lord : *{planet}">
+        <p th:text="*{lord}"></p>
+    </div>
+    <form method="post" th:action="@{/planets/deletePlanet/__${planet.getId()}__}">
+        <input type="submit" th:value="'Delete ' + ${planet.getName()}">
+    </form>
+
+
+</div>
+
+<p><a href="/lords/supremeLordPage">Supreme Lord Page</a></p>
+<p><a href="/mainPage">Main Page</a></p>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show All Lords</title>
+</head>
+<body>
+
+<h1>Show all Lords</h1>
+
+<div th:each="lord : ${allLords}">
+    <a th:href="@{/lords/showLord/{lordId}(lordId=${lord.getId()})}" th:text="${lord.getLordName()}"></a>
+    <form method="post" th:action="@{/lords/deleteLord/__${lord.getId()}__}">
+        <input type="submit" th:value="'Delete ' + ${lord.getLordName()}">
+    </form>
+</div>
+
+<p><a href="/lords/supremeLordPage">Supreme Lord Page</a></p>
+<p><a href="/mainPage">Main Page</a></p>
+
+</body>
+</html>
